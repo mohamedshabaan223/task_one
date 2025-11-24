@@ -46,24 +46,40 @@ SettingTab(),
            body: tabs[currentIndex],
          
              
-            bottomNavigationBar: BottomNavigationBar(
-              currentIndex: currentIndex,
-              onTap: (value) {
-                currentIndex = value;
-                setState(() {
-                  
-                });
-              },
-              type: BottomNavigationBarType.fixed,
-              unselectedItemColor: ColorsManger.white,
-              selectedItemColor: ColorsManger.red,
-              backgroundColor: ColorsManger.black,
-              items: [
-                 BottomNavigationBarItem(icon: Icon(Icons.home ,  size: 30,), 
-                 label: 'Home'),
-                  BottomNavigationBarItem(icon: Icon(Icons.settings ,  size: 30,), 
-                 label: 'setting')
-            ]),
+            bottomNavigationBar: BottomAppBar(
+              shape: CircularNotchedRectangle(
+                
+              ),
+              elevation: 0,
+              clipBehavior: Clip.antiAlias,
+              notchMargin: 10,
+              padding: EdgeInsets.zero,
+              color: ColorsManger.white,
+              child: BottomNavigationBar(
+                currentIndex: currentIndex,
+                onTap: (value) {
+                  currentIndex = value;
+                  setState(() {
+                    
+                  });
+                },
+                type: BottomNavigationBarType.fixed,
+              
+                unselectedItemColor: ColorsManger.white,
+                selectedItemColor: ColorsManger.red,
+                backgroundColor: ColorsManger.black,
+                items: [
+                   BottomNavigationBarItem(icon: Icon(Icons.home ,  size: 30,), 
+                   label: 'Home'),
+                    BottomNavigationBarItem(icon: Icon(Icons.settings ,  size: 30,), 
+                   label: 'setting')
+              ]),
+            ),
+            floatingActionButton: FloatingActionButton(onPressed: (){},
+            backgroundColor: ColorsManger.black,
+            shape: CircleBorder(side: BorderSide(color: ColorsManger.white , width: 4)),
+            child: Icon(Icons.add , color: ColorsManger.white , size: 30,),),
+            floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
           
         
       ),
